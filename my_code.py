@@ -1,3 +1,5 @@
+import pytest
+
 def fix_phone_num(phone_num_to_fix):
   # given "5125558823". Split the parts, then recombine and return
   area_code = phone_num_to_fix[0:3]  # 512 (first three digits)
