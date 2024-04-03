@@ -8,5 +8,5 @@ def fix_phone_num(phone_num_to_fix):
   
   return fixed_num
 
-def test_fix_phone_num(input):
+def test_fix_phone_num():
   assert test_fix_phone_num("5125558823") == '(512) 555 8823'
