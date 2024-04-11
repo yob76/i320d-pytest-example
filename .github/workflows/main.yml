@@ -10,14 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5 # https://github.com/actions/setup-python/tree/main
+    - uses: actions/setup-python@v4
       with:
         python-version: '3.10' 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pytest
-    - name: Pytest summary
-      uses: dariocurr/pytest-summary@v2
+    - name: Run pytest
+      run: |
+        pytest my_code.py --junit-xml=.test_report.xml
+    
+    - name: Upload summary
+      uses: test-summary/action@v2
       with:
-        paths: my_code.py
+        paths: ".test_report.xml"
+      if: always()
