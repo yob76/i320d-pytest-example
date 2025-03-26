@@ -17,4 +17,9 @@ def test_fix_phone_num():
 def test_fix_phone_num_wrong_format():
     assert fix_phone_num("555-442-98761") == "555-442-9876"
     assert fix_phone_num("(321) 654 3333") == "321-654-3333"
-print(fixed_num.isdigit)
+def test_1():
+    raise ValueError("Error test 1")
+        fix_phone_num("51")
+def test_2():
+    raise ValueError("Error test 2")
+        fix_phone_num("hello12345")
