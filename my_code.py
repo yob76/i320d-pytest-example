@@ -19,3 +19,7 @@ def test_fix_phone_num():
 def test_fix_phone_num_rejects_invalid_length():
     fix_phone_num("555-442-98761")
     fix_phone_num("(321) 654 3333")
+  
+def test_valueerror_on_nondigits():
+    with pytest.raises(ValueError):
+        fix_phone_num("abc-def-ghij")
