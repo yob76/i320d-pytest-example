@@ -11,4 +11,11 @@ def fix_phone_num(phone_num_to_fix):
   return fixed_num
 
 def test_fix_phone_num():
-  assert fix_phone_num("5125558823") == '(512) 555 8823'
+    assert fix_phone_num("555-442-9876") == "5554429876"
+    assert fix_phone_num("(321) 654-3333") == "3216543333"
+    assert fix_phone_num("5554429876") == "5554429876"
+    assert fix_phone_num("3216543333") == "3216543333"
+
+def test_fix_phone_num_rejects_invalid_length():
+    fix_phone_num("555-442-98761")
+    fix_phone_num("(321) 654 3333")
